@@ -1,3 +1,5 @@
+var elementSpace = document.getElementById('place');
+console.log(elementSpace);
 
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -5,6 +7,9 @@ xmlhttp.onreadystatechange = function() {
         var apiResult = JSON.parse(this.responseText);
 
         //Code Dealing With The API Data Goes Here
+        console.log(apiResult.name);
+        var cityName = document.createTextNode(apiResult.name);
+        elementSpace.appendChild(cityName);
 
     }
 };
